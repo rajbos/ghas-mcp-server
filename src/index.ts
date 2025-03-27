@@ -4,7 +4,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { CallToolRequestSchema, ListToolsRequestSchema, } from "@modelcontextprotocol/sdk/types.js";
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
-import { listCodeScanningAlerts } from "./operations/security.js";
+import { listCodeScanningAlerts, listSecretScanningAlerts, listDependabotAlerts } from "./operations/security.js";
 import { GitHubValidationError, GitHubResourceNotFoundError, GitHubAuthenticationError, GitHubPermissionError, GitHubRateLimitError, GitHubConflictError, isGitHubError, GitHubError, } from './common/errors.js';
 import { VERSION } from "./common/version.js";
 const server = new Server({
@@ -51,9 +51,26 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
                     repo: z.string(),
                 })),
             },
+            {
+                name: "list_secret_scanning_alerts",
+                description: "List the current GitHub Advanced Security secret scanning alerts for a repository",
+                inputSchema: zodToJsonSchema(z.object({
+                    owner: z.string(),
+                    repo: z.string(),
+                })),
+            },
+            {
+                name: "list_dependabot_alerts",
+                description: "List the current GitHub Dependabot alerts for a repository",
+                inputSchema: zodToJsonSchema(z.object({
+                    owner: z.string(),
+                    repo: z.string(),
+                })),
+            },
         ],
     };
 });
+
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
     try {
         if (!request.params.arguments) {
@@ -63,6 +80,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             case "list_code_scanning_alerts": {
                 const args = z.object({ owner: z.string(), repo: z.string() }).parse(request.params.arguments);
                 const alerts = await listCodeScanningAlerts(args.owner, args.repo);
+                return {
+                    content: [{ type: "text", text: JSON.stringify(alerts, null, 2) }],
+                };
+            }
+            case "list_secret_scanning_alerts": {
+                const args = z.object({ owner: z.string(), repo: z.string() }).parse(request.params.arguments);
+                const alerts = await listSecretScanningAlerts(args.owner, args.repo);
+                return {
+                    content: [{ type: "text", text: JSON.stringify(alerts, null, 2) }],
+                };
+            }
+            case "list_dependabot_alerts": {
+                const args = z.object({ owner: z.string(), repo: z.string() }).parse(request.params.arguments);
+                const alerts = await listDependabotAlerts(args.owner, args.repo);
                 return {
                     content: [{ type: "text", text: JSON.stringify(alerts, null, 2) }],
                 };
