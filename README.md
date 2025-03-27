@@ -23,6 +23,9 @@ Add this to your comfiguration. For VS Code it would look like this:
   }
 ```
 
+# Results
+![Screenshot of the output inside of VS Code](/docs/result.png)
+
 # Contributing
 Contributions are welcome! If you have ideas for new tools or improvements, please open an issue or submit a pull request.
 
