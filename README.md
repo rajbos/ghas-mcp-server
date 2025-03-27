@@ -6,6 +6,8 @@ Currently this has the following tools that are supported:
 - list_secret_scanning_alerts: List all secret scanning alerts for a repository
 - list_code_scanning_alerts: List all code scanning alerts for a repository
 
+Make sure to add these three scopes (read only) to the configured PAT and for the correct organization as well!
+
 # Example configuration
 Add this to your comfiguration. For VS Code it would look like this:
 ``` json
