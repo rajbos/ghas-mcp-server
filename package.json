@@ -1,7 +1,7 @@
 {
   "name": "ghas-mpc-server",
   "version": "0.0.1",
-  "description": "ghas-mpc-server MCP server",
+  "description": "GitHub Advanced Security MCP server",
   "license": "MIT",
   "type": "module",
   "bin": {
