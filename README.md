@@ -1,5 +1,5 @@
-# ghas-mpc-server
-MPC server to make calls to GHAS for GitHub repositories.
+# ghas-mcp-server
+MCP server to make calls to GHAS for GitHub repositories.
 
 Currently this has the following tools that are supported:
 - list_dependabot_alerts: List all dependabot alerts for a repository
@@ -11,11 +11,11 @@ Make sure to add these three scopes (read only) to the configured PAT and for th
 # Example configuration
 Add this to your comfiguration. For VS Code it would look like this:
 ``` json
-  "ghas-mpc-server": {
+  "ghas-mcp-server": {
       "command": "npx",
       "args": [
           "-y",
-          "@rajbos/ghas-mpc-server"
+          "@rajbos/ghas-mcp-server"
       ],
       "env": {
           "GITHUB_PERSONAL_ACCESS_TOKEN": "github_pat_your_values_here"
@@ -43,7 +43,7 @@ npm run build
 ## Project Structure
 
 ```
-ghas-mpc-server/
+ghas-mcp-server/
 ├── src/
 │   ├── operations/      # MCP Tools
 │   │   └── security.ts
