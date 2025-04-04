@@ -135,6 +135,7 @@ You can test your local build by configuring the locally build version with the 
     }
 }
 ```
+Don't forget to change the path to your local build and build the project first!
 
 ## Learn More
 
