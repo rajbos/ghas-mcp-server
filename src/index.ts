@@ -7,6 +7,7 @@ import { zodToJsonSchema } from 'zod-to-json-schema';
 import { listCodeScanningAlerts, listSecretScanningAlerts, listDependabotAlerts } from "./operations/security.js";
 import { GitHubValidationError, GitHubResourceNotFoundError, GitHubAuthenticationError, GitHubPermissionError, GitHubRateLimitError, GitHubConflictError, isGitHubError, GitHubError, } from './common/errors.js';
 import { VERSION } from "./common/version.js";
+
 const server = new Server({
     name: "github-mcp-server",
     version: VERSION,
@@ -15,6 +16,7 @@ const server = new Server({
         tools: {},
     },
 });
+
 function formatGitHubError(error: GitHubError) {
     let message = `GitHub API Error: ${error.message}`;
     if (error instanceof GitHubValidationError) {
