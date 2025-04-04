@@ -14,7 +14,7 @@ Use the buttons to install the server in your VS Code or VS Code Insiders enviro
 
 VS Code will let you see the configuration before anything happens:
 
-![Screenshot of the configuration in VS Code](/docs/install_dialogue.png)  
+![Screenshot of the configuration in VS Code](https://github.com/rajbos/ghas-mcp-server/raw/main/docs/install_dialogue.png)  
 
 [<img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square&label=Install%20Server&color=0098FF">](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522ghas-mcp-server%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522%2540rajbos%252Fghas-mcp-server%2522%255D%252C%2522env%2522%253A%257B%2522GITHUB_PERSONAL_ACCESS_TOKEN_USE_GHCLI%2522%253A%2522true%2522%257D%257D) [<img alt="Install in VS Code Insiders" src="https://img.shields.io/badge/VS_Code_Insiders-VS_Code_Insiders?style=flat-square&label=Install%20Server&color=24bfa5">](https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522ghas-mcp-server%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522%2540rajbos%252Fghas-mcp-server%2522%255D%252C%2522env%2522%253A%257B%2522GITHUB_PERSONAL_ACCESS_TOKEN_USE_GHCLI%2522%253A%2522true%2522%257D%257D)
 
@@ -81,7 +81,7 @@ For VS Code it would look like this:
 ```
 
 # Results
-![Screenshot of the output inside of VS Code](/docs/result.png)
+![Screenshot of the output inside of VS Code](https://github.com/rajbos/ghas-mcp-server/raw/main/docs/result.png)
 
 # Contributing
 Contributions are welcome! If you have ideas for new tools or improvements, please open an issue or submit a pull request.
