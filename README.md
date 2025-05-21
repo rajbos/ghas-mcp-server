@@ -1,3 +1,6 @@
+> [!Warning]  
+> The calls in this server have been added to the official [GitHub MCP Server](https://github.com/github/github-mcp-server), so this repo is archived and for learning purposes only!
+
 # ghas-mcp-server
 MCP server to make calls to GHAS for GitHub repositories.
 
